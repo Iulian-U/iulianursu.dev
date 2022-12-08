@@ -71,17 +71,17 @@ const theme = useTheme();
               </div>
 
               <div class="menu-item-container">
-                <a>
+                <a href="https://github.com/Iulian-U" target="blank_">
                   <MenuItem>
                     <Github class="menu-item-icon" aria-hidden="true" />
                   </MenuItem>
                   <MenuItem>
-                    <span>Github</span>
+                    <span> Github </span>
                   </MenuItem>
                   <ExternalLink class="menu-additional-icon" />
                 </a>
 
-                <a>
+                <a href="https://www.linkedin.com/in/iulian-ursu-28006625a/" target="blank_">
                   <MenuItem>
                     <Linkedin class="menu-item-icon" aria-hidden="true" />
                   </MenuItem>
@@ -91,7 +91,7 @@ const theme = useTheme();
                   <ExternalLink class="menu-additional-icon" />
                 </a>
 
-                <a>
+                <a href="https://codepen.io/your-work/" target="blank_">
                   <MenuItem>
                     <Codepen class="menu-item-icon" aria-hidden="true" />
                   </MenuItem>

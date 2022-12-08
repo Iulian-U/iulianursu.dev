@@ -14,7 +14,11 @@ import { User, Code, Github } from "lucide-vue-next";
     <p class="about">I am a 26 year old Self-taught Front-End Developer</p>
     <div class="btn-container">
       <div class="btn">
-        <a class="btn-link">
+        <a
+          href="https://www.linkedin.com/in/iulian-ursu-28006625a/"
+          target="blank_"
+          class="btn-link"
+        >
           <User class="btn-icon" />
           <span>About</span></a
         >
@@ -28,7 +32,7 @@ import { User, Code, Github } from "lucide-vue-next";
       </div>
 
       <div class="btn">
-        <a class="btn-link">
+        <a href="https://github.com/Iulian-U" target="blank_" class="btn-link">
           <Github class="btn-icon" />
           <span>Github</span></a
         >
