@@ -3,7 +3,7 @@ const clientSecret = import.meta.env.VITE_SPOTIFY_CLIENT_SECRET;
 const refreshToken = import.meta.env.VITE_SPOTIFY_REFRESH_TOKEN;
 
 const basic = Buffer.from(`${clientID}:${clientSecret}`).toString("base64");
-const TOKEN_ENDPOINT = "https://accounts.spotify.com/api/token";
+const TOKEN_ENDPOINT = import.meta.env.VITE_SPOTIFY_TOKEN_ENDPOINT;
 
 // This gets the access token from Spotify to connect to the API using provided refresh token.
 const getAccessToken = async () => {
@@ -22,7 +22,7 @@ const getAccessToken = async () => {
 };
 
 // Get the current now playing track of given user access token.
-const NOW_PLAYING_ENDPOINT = "https://api.spotify.com/v1/me/player/currently-playing";
+const NOW_PLAYING_ENDPOINT = import.meta.env.VITE_SPOTIFY_NOW_PLAYING_ENDPOINT;
 export const getNowPlaying = async () => {
   const { access_token: accessToken } = await getAccessToken();
   return fetch(NOW_PLAYING_ENDPOINT, {
