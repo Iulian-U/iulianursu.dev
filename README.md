@@ -42,3 +42,7 @@ npm run build
 # Or using Yarn
 yarn
 ```
+
+## 📄 License
+
+MIT © [Iulian Ursu](https://github.com/Iulian-U/iulianursu.dev/blob/main/LICENSE)
