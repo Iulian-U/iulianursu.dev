@@ -1,6 +1,5 @@
 <script setup>
 import { RouterLink } from "vue-router";
-import NowSpotify from "../Plugins/NowSpotify.vue";
 import { useTheme } from "../../stores/theme";
 import { Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/vue";
 import {
@@ -100,9 +99,6 @@ const theme = useTheme();
                   </MenuItem>
                   <ExternalLink class="menu-additional-icon" />
                 </a>
-              </div>
-              <div>
-                <NowSpotify />
               </div>
             </MenuItems>
           </transition>
