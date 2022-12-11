@@ -19,6 +19,7 @@
     "graphql": "^16.6.0",
     "graphql-request": "^5.0.0",
     "graphql-tag": "^2.12.6",
+    "howler": "^2.2.3",
     "lucide-vue-next": "^0.101.0",
     "nprogress": "^0.2.0",
     "pinia": "^2.0.23",

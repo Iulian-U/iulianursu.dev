@@ -1,6 +1,7 @@
 <script setup>
 import { RouterLink } from "vue-router";
-import { useTheme } from "../../stores/theme";
+import { useTheme } from "../../stores/themeStore";
+import { useSound } from "../../stores/soundStore";
 import { Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/vue";
 import {
   Home,
@@ -13,11 +14,15 @@ import {
   ExternalLink,
   Sun,
   Moon,
+  Square,
   CheckSquare,
+  Volume2,
+  VolumeX,
 } from "lucide-vue-next";
 import { Menu as MenuIcon } from "lucide-vue-next";
 
 const theme = useTheme();
+const sound = useSound();
 </script>
 
 <template>
@@ -125,11 +130,31 @@ const theme = useTheme();
           >
             <MenuItems class="menu-items items-right">
               <div class="menu-item-container">
+                <a @click="sound.toggleSound()">
+                  <Volume2
+                    class="menu-item-icon"
+                    aria-hidden="true"
+                    v-show="sound.isSoundEnabled == true"
+                  />
+                  <VolumeX
+                    class="menu-item-icon"
+                    aria-hidden="true"
+                    v-show="sound.isSoundEnabled == false"
+                  />
+                  <MenuItem>
+                    <span>{{ sound.soundLabel }}</span>
+                  </MenuItem>
+                  <Square class="menu-additional-icon" v-show="sound.isSoundEnabled == false" />
+                  <CheckSquare class="menu-additional-icon" v-show="sound.isSoundEnabled == true" />
+                </a>
+              </div>
+              <div class="menu-item-container">
                 <a @click="theme.toggleDark()">
                   <Sun class="menu-item-icon" aria-hidden="true" />
                   <MenuItem>
                     <span>Light Theme</span>
                   </MenuItem>
+                  <Square class="menu-additional-icon" v-show="theme.isDark == true" />
                   <CheckSquare class="menu-additional-icon" v-show="theme.isDark == false" />
                 </a>
 
@@ -138,6 +163,7 @@ const theme = useTheme();
                   <MenuItem>
                     <span>Dark Theme</span>
                   </MenuItem>
+                  <Square class="menu-additional-icon" v-show="theme.isDark == false" />
                   <CheckSquare class="menu-additional-icon" v-show="theme.isDark == true" />
                 </a>
               </div>
