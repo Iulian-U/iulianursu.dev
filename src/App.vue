@@ -2,10 +2,16 @@
 import { RouterView } from "vue-router";
 import Navbar from "./components/App/Navbar.vue";
 import Particles from "./components/Plugins/Particles.vue";
+import { useSound } from "./stores/soundStore";
+import { useMousePressed } from "@vueuse/core";
+import { reactive, ref } from "@vue/reactivity";
+import { computed } from "@vue/runtime-core";
+
+const sound = useSound();
 </script>
 
 <template>
-  <div class="wrapper">
+  <div class="wrapper" @mousedown="sound.playSound()">
     <Particles />
     <div class="nav">
       <Navbar />
