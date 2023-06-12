@@ -1,15 +1,14 @@
 <script setup>
-import { RouterLink } from "vue-router";
-import { useTheme } from "../../stores/themeStore";
-import { useSound } from "../../stores/soundStore";
-import { Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/vue";
+import { RouterLink } from 'vue-router';
+import { useTheme } from '../../stores/themeStore';
+import { useSound } from '../../stores/soundStore';
+import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue';
 import {
   Home,
   Code,
   Clock,
   Settings,
   Github,
-  Linkedin,
   Codepen,
   ExternalLink,
   Sun,
@@ -18,8 +17,8 @@ import {
   CheckSquare,
   Volume2,
   VolumeX,
-} from "lucide-vue-next";
-import { Menu as MenuIcon } from "lucide-vue-next";
+} from 'lucide-vue-next';
+import { Menu as MenuIcon } from 'lucide-vue-next';
 
 const theme = useTheme();
 const sound = useSound();
@@ -85,16 +84,6 @@ const sound = useSound();
                   <ExternalLink class="menu-additional-icon" />
                 </a>
 
-                <a href="https://www.linkedin.com/in/iulian-ursu-28006625a/" target="blank_">
-                  <MenuItem>
-                    <Linkedin class="menu-item-icon" aria-hidden="true" />
-                  </MenuItem>
-                  <MenuItem>
-                    <span>Linkedin</span>
-                  </MenuItem>
-                  <ExternalLink class="menu-additional-icon" />
-                </a>
-
                 <a href="https://codepen.io/your-work/" target="blank_">
                   <MenuItem>
                     <Codepen class="menu-item-icon" aria-hidden="true" />
@@ -144,8 +133,14 @@ const sound = useSound();
                   <MenuItem>
                     <span>{{ sound.soundLabel }}</span>
                   </MenuItem>
-                  <Square class="menu-additional-icon" v-show="sound.isSoundEnabled == false" />
-                  <CheckSquare class="menu-additional-icon" v-show="sound.isSoundEnabled == true" />
+                  <Square
+                    class="menu-additional-icon"
+                    v-show="sound.isSoundEnabled == false"
+                  />
+                  <CheckSquare
+                    class="menu-additional-icon"
+                    v-show="sound.isSoundEnabled == true"
+                  />
                 </a>
               </div>
               <div class="menu-item-container">
@@ -154,8 +149,14 @@ const sound = useSound();
                   <MenuItem>
                     <span>Light Theme</span>
                   </MenuItem>
-                  <Square class="menu-additional-icon" v-show="theme.isDark == true" />
-                  <CheckSquare class="menu-additional-icon" v-show="theme.isDark == false" />
+                  <Square
+                    class="menu-additional-icon"
+                    v-show="theme.isDark == true"
+                  />
+                  <CheckSquare
+                    class="menu-additional-icon"
+                    v-show="theme.isDark == false"
+                  />
                 </a>
 
                 <a @click="theme.toggleLight()">
@@ -163,8 +164,14 @@ const sound = useSound();
                   <MenuItem>
                     <span>Dark Theme</span>
                   </MenuItem>
-                  <Square class="menu-additional-icon" v-show="theme.isDark == false" />
-                  <CheckSquare class="menu-additional-icon" v-show="theme.isDark == true" />
+                  <Square
+                    class="menu-additional-icon"
+                    v-show="theme.isDark == false"
+                  />
+                  <CheckSquare
+                    class="menu-additional-icon"
+                    v-show="theme.isDark == true"
+                  />
                 </a>
               </div>
             </MenuItems>
