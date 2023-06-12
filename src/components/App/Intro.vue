@@ -1,6 +1,6 @@
 <script setup>
-import { RouterLink } from "vue-router";
-import { User, Code, Github } from "lucide-vue-next";
+import { RouterLink } from 'vue-router';
+import { User, Code, Github } from 'lucide-vue-next';
 </script>
 
 <template>
@@ -11,16 +11,12 @@ import { User, Code, Github } from "lucide-vue-next";
       I'm Iulian, a
       <div class="title">developer</div>
     </h1>
-    <p class="about">I am a 26 year old Self-taught Front-End Developer</p>
+    <p class="about">I am a Software Engineer and Front-End Developer</p>
     <div class="btn-container">
       <div class="btn">
-        <a
-          href="https://www.linkedin.com/in/iulian-ursu-28006625a/"
-          target="blank_"
-          class="btn-link"
-        >
+        <router-link to="/timeline" class="btn-link">
           <User class="btn-icon" />
-          <span>About</span></a
+          <span>About</span></router-link
         >
       </div>
 
@@ -42,7 +38,7 @@ import { User, Code, Github } from "lucide-vue-next";
 </template>
 
 <style scoped>
-@import "../../assets/css/animations";
+@import '../../assets/css/animations';
 
 .container {
   @apply max-w-md sm:max-w-lg md:sm:max-w-2xl lg:sm:max-w-3xl w-full space-y-8 text-center;
